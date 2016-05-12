@@ -7,17 +7,19 @@ import numpy as np
 
 def main():
 
+    # Load the data
     main_data = pd.read_csv('../data/main_data.csv')
     targets = pd.read_csv('../data/target.csv')
 
+    # Split the Data
     X_train, X_test, y_train, y_test = train_test_split(main_data, targets, test_size=0.25, random_state=42)
 
+    # Train model
     tree = DecisionTreeClassifier()
-
     tree.fit(X_train, y_train)
 
+    # predict and print accuracy
     pred = tree.predict(X_test)
-
     print(accuracy_score(pred, y_test))
 
     # Get test data for submission

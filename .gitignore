@@ -66,3 +66,6 @@ target/
 
 #data folders
 data/*
+
+# submissions
+submissions/*
